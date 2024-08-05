@@ -1,0 +1,92 @@
+{
+    "type": "record",
+    "name": "Author",
+    "namespace": "org.openalex",
+    "fields": [
+        {"name": "affiliations", "type": ["null",{"type" : "array", "items": 
+                {"type": "record",
+                "name": "Affiliation",
+                "fields": [
+                    {"name": "institution", "type": ["null", 
+                        {"type": "record",
+                        "name": "Institution",
+                        "fields": [
+                            {"name": "country_code", "type": ["null","string"]},
+                            {"name": "display_name", "type": ["null","string"]},
+                            {"name": "id", "type": ["null","string"]},
+                            {"name": "lineage", "type": ["null", {
+                                "type": "array", "items": "string"
+                            }]},
+                            {"name": "ror", "type": ["null","string"]},
+                            {"name": "type", "type": ["null","string"]}
+
+                        ]}
+                    ]},
+                    {"name": "years", "type": ["null", {"type":"array", "items": ["int", "null"]}]}
+                ]}
+            }
+        ]},
+        {"name": "cited_by_count", "type": ["null","int"]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "YearCount",
+                "fields": [
+                    {"name": "year", "type": ["null","int"]},
+                    {"name": "works_count", "type": ["null","int"]},
+                    {"name": "cited_by_count", "type": ["null","int"]}
+            ]}
+        }]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "display_name_alternatives", "type": ["null", {
+            "type": "array", "items": "string"
+        }]},
+        {"name": "id", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Id",
+                "fields": [
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "orcid", "type": ["null", "string"]},
+                    {"name": "scopus", "type": ["null", "string"]},
+                    {"name": "twitter", "type": ["null", "string"]},
+                    {"name": "wikipedia", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"type": ["org.openalex.Institution", "null"],"name": "last_known_institution"},
+        {"name": "last_known_institutions", 
+            "type": ["null", {"type": "array", "items": "org.openalex.Institution"}]
+        },
+        {"name": "orcid", "type": ["null", "string"]},
+        {"name": "summary_stats", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Stats",
+                "fields": [
+                    {"name": "secondyr_mean_citedness", "type": ["null", "double"]},
+                    {"name": "h_index", "type": ["null", "int"]},
+                    {"name": "i10_index", "type": ["null", "int"]}
+                ]
+            }
+        ]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "works_api_url", "type": ["null", "string"]},
+        {"name": "works_count", "type": ["null", "int"]},
+        {"name": "x_concepts", "type": ["null", {"type": "array", "items":
+            ["null", {"type": "record",
+            "name": "X_concept",
+            "fields": [
+                {"name": "id", "type": ["null","string"]},
+                {"name": "wikidata", "type": ["null","string"]},
+                {"name": "display_name", "type": ["null","string"]},
+                {"name": "level", "type": ["null","int"]},
+                {"name": "score", "type": ["null","double"]}
+            ]}]
+        }]}
+    ]
+
+}
+

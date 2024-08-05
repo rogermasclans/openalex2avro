@@ -1,0 +1,72 @@
+{
+    "name": "Publisher",
+    "namespace": "org.openalex",
+    "type": "record",
+    "fields":
+    [
+        {"name": "alternate_titles", "type": ["null",
+            {"type": "array", "items": "string"}
+        ]},
+        {"name": "cited_by_count", "type": ["null", "int"]},
+        {"name": "country_codes", "type": ["null",
+            {"type": "array", "items": "string"}
+        ]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "YearCount",
+            "fields": [
+                {"name": "year", "type": ["null","int"]},
+                {"name": "works_count", "type": ["null","int"]},
+                {"name": "cited_by_count", "type": ["null","int"]}
+            ]}
+        }]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "hierarchy_level", "type": ["null", "int"]},
+        {"name": "id", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null",
+            {
+                "type": "record",
+                "name": "Id",
+                "fields": [
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "ror", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "image_thumbnail_url", "type": ["null", "string"]},
+        {"name": "image_url", "type": ["null", "string"]},
+        {"name": "lineage", "type": ["null",
+            {"type": "array", "items": "string"}
+        ]},
+        {"name": "parent_publisher", "type": ["null", "string"]},
+        {"name": "roles", "type": ["null", 
+            {"type": "array", "items": 
+                {
+                    "type": "record",
+                    "name": "Role",
+                    "fields": [
+                        {"name": "role", "type": ["null", "string"]},
+                        {"name": "id", "type": ["null", "string"]},
+                        {"name": "works_count", "type": ["null", "int"]}
+                    ]
+                }
+            }
+        ]},
+        {"name": "sources_api_url", "type": ["null", "string"]},
+        {"name": "summary_stats", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Stats",
+                "fields": [
+                    {"name": "secondyr_mean_citedness", "type": ["null", "double"]},
+                    {"name": "h_index", "type": ["null", "int"]},
+                    {"name": "i10_index", "type": ["null", "int"]}
+                ]
+            }
+        ]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "works_count", "type": ["null", "int"]}
+    ]
+}

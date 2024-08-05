@@ -1,0 +1,69 @@
+{
+    "type": "record",
+    "name": "Concept",
+    "namespace": "org.openalex",
+    "fields": [
+        {"name": "ancestors", "type": ["null",
+            {"type": "array", "items": 
+                {"type": "record", "name": "Dehydrated_concept", "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "level", "type": ["null","int"]}
+
+                ]}
+            }
+        ]},
+        {"name": "cited_by_count", "type": ["null", "int"]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "YearCount",
+            "fields": [
+                {"name": "year", "type": ["null","int"]},
+                {"name": "works_count", "type": ["null","int"]},
+                {"name": "cited_by_count", "type": ["null","int"]}
+            ]}
+        }]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "description", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "id", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null",
+            {
+                "type": "record",
+                "name": "Id",
+                "fields": [
+                    {"name": "mag", "type": ["null", "long"]},
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "umls_cui", "type": ["null", 
+                        {"type": "array", "items": "string"}
+                    ]},
+                    {"name": "umls_aui", "type": ["null", 
+                        {"type": "array", "items": "string"}
+                    ]},
+                    {"name": "wikidata", "type": ["null", "string"]},
+                    {"name": "wikipedia", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "image_thumbnail_url", "type": ["null", "string"]},
+        {"name": "image_url", "type": ["null", "string"]},
+        {"name": "level", "type": ["null", "int"]},
+        {"name": "related_concepts", "type": ["null",
+            {"type": "array", "items": 
+                {"type": "record", "name": "Small_concept", "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "level", "type": ["null", "int"]}, 
+                    {"name": "score", "type": ["null","double"]}
+                ]}
+            }
+        ]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "wikidata", "type": ["null", "string"]},
+        {"name": "works_api_url", "type": ["null", "string"]},
+        {"name": "works_count", "type": ["null", "int"]}
+    ]
+}
+

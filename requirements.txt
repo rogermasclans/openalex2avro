@@ -1,0 +1,4 @@
+avro==1.11.3
+numpy==1.21.6
+tqdm==4.66.1
+typing_extensions==4.7.1

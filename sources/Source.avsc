@@ -1,0 +1,96 @@
+{
+    "name": "Source",
+    "namespace": "org.openalex",
+    "type": "record",
+    "fields": [
+        {"name": "abbreviated_title", "type": ["null", "string"]},
+        {"name": "alternate_titles", 
+            "type": ["null", {"type": "array", "items": "string"}]
+        },
+        {"name": "apc_prices", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "Price",
+            "fields": [
+                {"name": "price", "type": ["null","int"]},
+                {"name": "currency", "type": ["null","string"]}
+            ]}
+        }]},
+        {"name": "apc_usd", "type": ["null", "int"]},
+        {"name": "cited_by_count", "type": ["null", "int"]},
+        {"name": "country_code", "type": ["null", "string"]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "YearCount",
+            "fields": [
+                {"name": "year", "type": ["null","int"]},
+                {"name": "works_count", "type": ["null","int"]},
+                {"name": "cited_by_count", "type": ["null","int"]}
+            ]}
+        }]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "homepage_url", "type": ["null", "string"]},
+        {"name": "host_organization", "type": ["null", "string"]},
+        {"name": "host_organization_lineage", 
+            "type": ["null", {"type": "array", "items": "string"}]
+        },
+        {"name": "host_organization_name", "type": ["null", "string"]},
+        {"name": "id", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null",
+            {
+                "type": "record",
+                "name": "Id",
+                "fields": [
+                    {"name": "fatcat", "type": ["null", "string"]},
+                    {"name": "issn", 
+                        "type": ["null", {"type": "array", "items": "string"}]
+                    },
+                    {"name": "issn_l", "type": ["null", "string"]},
+                    {"name": "mag", "type": ["null", "long"]},
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "is_in_doaj", "type": ["null", "boolean"]},
+        {"name": "is_oa", "type": ["null", "boolean"]},
+        {"name": "issn", 
+            "type": ["null", {"type": "array", "items": "string"}]
+        },
+        {"name": "issn_l", "type": ["null", "string"]},
+        {"name": "societies", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "Society",
+            "fields": [
+                {"name": "url", "type": ["null","string"]},
+                {"name": "organization", "type": ["null","string"]}
+            ]}
+        }]},
+        {"name": "summary_stats", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Stats",
+                "fields": [
+                    {"name": "secondyr_mean_citedness", "type": ["null", "double"]},
+                    {"name": "h_index", "type": ["null", "int"]},
+                    {"name": "i10_index", "type": ["null", "int"]}
+                ]
+            }
+        ]},
+        {"name": "type", "type": ["null", "string"]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "works_api_url", "type": ["null", "string"]},
+        {"name": "works_count", "type": ["null", "int"]},
+        {"name": "x_concepts", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "x_concepts",
+            "fields": [
+                {"name": "id", "type": ["null","string"]},
+                {"name": "wikidata", "type": ["null","string"]},
+                {"name": "display_name", "type": ["null","string"]},
+                {"name": "level", "type": ["null","int"]},
+                {"name": "score", "type": ["null","double"]}
+            ]}
+        }]}
+    ]
+}

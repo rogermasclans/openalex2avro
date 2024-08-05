@@ -1,0 +1,273 @@
+{
+  "type": "record",
+  "namespace": "org.openalex",
+  "name": "Work",
+    "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "doi", "type": ["null", "string"]},
+        {"name": "doi_registration_agency", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "title", "type": ["null", "string"]},
+        {"name": "publication_year", "type": ["null", "int"]},
+        {"name": "publication_date", "type": ["null", "string"]},
+        {"name": "language", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null", 
+            {
+                "type": "record",
+                "name": "IdRecord",
+                "fields": [
+                    {"name": "doi", "type": ["null", "string"]},
+                    {"name": "mag", "type": ["null", "long"]},
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "pmid", "type": ["null", "string"]},
+                    {"name": "pmcid", "type": ["null", "string"]}
+                ]
+            }
+            
+        ]},
+        {"name": "primary_location", "type": ["null",
+            {
+                "type": "record",
+                "name": "Location",
+                "fields": [
+                    {"name": "is_accepted", "type": ["null", "boolean"]},
+                    {"name": "is_oa", "type": ["null", "boolean"]},
+                    {"name": "is_published", "type": ["null", "boolean"]},
+                    {"name": "landing_page_url", "type": ["null", "string"]},
+                    {"name": "license", "type": ["null", "string"]},
+                    {"name": "source", "type": ["null",
+                        {
+                            "type": "record",
+                            "name": "Source",
+                            "fields": [
+                                {"name": "display_name", "type": ["null", "string"]},
+                                {"name": "host_organization", "type": ["null", "string"]},
+                                {"name": "host_organization_lineage", "type": ["null", {"type": "array", "items": "string"}]},
+                                {"name": "host_organization_name", "type": ["null", "string"]},
+                                {"name": "id", "type": ["null", "string"]},
+                                {"name": "is_in_doaj", "type": ["null", "boolean"]},
+                                {"name": "is_oa", "type": ["null", "boolean"]},
+                                {"name": "issn", "type": ["null", {"type": "array", "items": "string"}]},
+                                {"name": "issn_l", "type": ["null", "string"]},
+                                {"name": "type", "type": ["null", "string"]}
+
+                            ]
+                        }
+                    ]},
+                    {"name": "pdf_url", "type": ["null", "string"]},
+                    {"name": "version", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "best_oa_location", "type": ["null","org.openalex.Location"]},
+        {"name": "type", "type": ["null", "string"]},
+        {"name": "type_crossref", "type": ["null", "string"]},
+        {"name": "open_access", "type": ["null",
+            {
+                "type": "record",
+                "name": "OpenAccess",
+                "fields": [
+                    {"name": "is_oa", "type": ["null", "boolean"]},
+                    {"name": "oa_status", "type": ["null", "string"]},
+                    {"name": "oa_url", "type": ["null", "string"]},
+                    {"name": "any_repository_has_fulltext", "type": ["null", "boolean"]}
+                ]
+            }
+        ]},
+        {"name": "authorships", "type": ["null", {"type" : "array", "items": 
+            {
+                "type": "record",
+                "name": "Authorship",
+                "fields": [
+                    {"name": "author", "type": ["null", 
+                        {
+                            "type": "record",
+                            "name": "Author",
+                            "fields": [
+                                {"name": "id", "type": ["null", "string"]},
+                                {"name": "display_name", "type": ["null", "string"]},
+                                {"name": "orcid", "type": ["null", "string"]}
+                            ]
+                        }
+                    ]},
+                    {"name": "author_position", "type": ["null", "string"]},
+                    {"name": "countries", "type": ["null", {"type" : "array", "items": "string"}]},
+                    {"name": "institutions", "type": ["null", {"type": "array", "items": 
+                        {
+                            "type": "record",
+                            "name": "Institution",
+                            "fields": [
+                                {"name": "id", "type": ["null", "string"]},
+                                {"name": "display_name", "type": ["null", "string"]},
+                                {"name": "ror", "type": ["null", "string"]},
+                                {"name": "country_code", "type": ["null", "string"]},
+                                {"name": "type", "type": ["null", "string"]},
+                                {"name": "lineage", "type": ["null", {"type" : "array", "items": "string"}]}
+
+                            ]
+                        }
+                    }]},
+                    {"name": "is_corresponding", "type": ["null", "boolean"]},
+                    {"name": "raw_affiliation_string", "type": ["null", "string"]},
+                    {"name": "raw_author_name", "type": ["null", "string"]}
+                ]
+            }
+        }]},
+        {"name": "countries_distinct_count", "type": ["null", "int"]},
+        {"name": "institutions_distinct_count", "type": ["null", "int"]},
+        {"name": "corresponding_author_ids", "type": ["null", {"type": "array", "items": "string"}]},
+        {"name": "corresponding_institution_ids", "type": ["null", {"type": "array", "items": "string"}]},
+        {"name": "cited_by_count", "type": ["null", "int"]},
+        {"name": "biblio", "type": ["null",
+            {
+                "type": "record",
+                "name": "Biblio",
+                "fields": [
+                    {"name": "volume", "type": ["null", "string"]},
+                    {"name": "issue", "type": ["null", "string"]},
+                    {"name": "first_page", "type": ["null", "string"]},
+                    {"name": "last_page", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "is_retracted", "type": ["null", "boolean"]},
+        {"name": "is_paratext", "type": ["null", "boolean"]},
+        {"name": "concepts", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "Concept",
+                "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "level", "type": ["null", "int"]},
+                    {"name": "score", "type": ["null", "double"]}
+                ]
+            }
+        }]},
+        {"name": "mesh", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "Mesh",
+                "fields": [
+                    {"name": "descriptor_ui", "type": ["null", "string"]},
+                    {"name": "descriptor_name", "type": ["null", "string"]},
+                    {"name": "qualifier_ui", "type": ["null", "string"]},
+                    {"name": "qualifier_name", "type": ["null", "string"]},
+                    {"name": "is_major_topic", "type": ["null", "boolean"]}
+                ]
+            }
+        }]},
+        {"name": "locations_count", "type": ["null", "int"]},
+        {"name": "locations", "type": ["null", {"type": "array", "items": "org.openalex.Location"}]},
+        {"name": "referenced_works", "type": ["null", {"type": "array", "items": "string"}]},
+        {"name": "referenced_works_count", "type": ["null", "int"]},
+        {"name": "sustainable_development_goals", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "SustainableDevelopmentGoal",
+                "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "score", "type": ["null", "double"]}
+                ]
+            }
+        }]},
+        {"name": "keywords", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "Keyword",
+                "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "score", "type": ["null", "double"]}
+                ]
+            }
+        }]},
+        {"name": "grants", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "Grant",
+                "fields": [
+                    {"name": "funder", "type": ["null", "string"]},
+                    {"name": "funder_display_name", "type": ["null", "string"]},
+                    {"name": "award_id", "type": ["null", "string"]}
+                ]
+            }
+        }]},
+        {"name": "apc_list", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Price",
+                "fields": [
+                    {"name": "currency", "type": ["null", "string"]},
+                    {"name": "value", "type": ["null", "int"]},
+                    {"name": "provenance", "type": ["null", "string"]},
+                    {"name": "value_usd", "type": ["null", "int"]}
+                ]
+            }
+        ]},
+        {"name": "apc_paid", "type": ["null", "org.openalex.Price"]},
+        {"name": "cited_by_percentile_year", "type": ["null", 
+            {
+                "type": "record",
+                "name": "CPY",
+                "fields": [
+                    {"name": "min", "type": ["null", "float"]},
+                    {"name": "max", "type": ["null", "float"]}
+                ]
+            }
+        ]},
+        {"name": "related_works", "type": ["null", {"type": "array", "items": "string"}]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {
+                "type": "record",
+                "name": "YearCount",
+                "fields": [
+                    {"name": "year", "type": ["null", "int"]},
+                    {"name": "cited_by_count", "type": ["null", "int"]}
+                ]
+            }
+        }]},
+        {"name": "cited_by_api_url", "type": ["null", "string"]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "has_fulltext", "type": ["null", "boolean"]},
+        {"name": "fulltext_origin", "type": ["null", "string"]},
+        {"name": "license", "type": ["null", "string"]},
+        {"name": "abstract", "type": ["null", "string"]},
+        {"name": "topics", "type": ["null", {"type": "array", "items": {
+           "type": "record",
+           "name": "Topic",
+            "fields": [
+            {"name": "id", "type": ["null", "string"]},
+            {"name": "display_name", "type": ["null", "string"]},
+            {"name": "subfield", "type": ["null", {
+              "type": "record",
+              "name": "TopicSubfield",
+              "fields": [
+                {"name": "id", "type": ["null", "string"]},
+                {"name": "display_name", "type": ["null", "string"]}
+               ]
+             }]},
+             {"name": "field", "type": ["null", {
+               "type": "record",
+               "name": "TopicField",
+               "fields": [
+                 {"name": "id", "type": ["null", "string"]},
+                 {"name": "display_name", "type": ["null", "string"]}
+              ]
+             }]},
+            {"name": "domain", "type": ["null", {
+               "type": "record",
+               "name": "TopicDomain",
+               "fields": [
+                {"name": "id", "type": ["null", "string"]},
+                {"name": "display_name", "type": ["null", "string"]}
+              ]
+            }]},
+            {"name": "score", "type": ["null", "double"]}
+          ]
+        }}]}
+    ]
+}

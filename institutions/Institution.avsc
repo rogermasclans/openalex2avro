@@ -1,0 +1,132 @@
+{
+    "name": "Institution",
+    "namespace": "org.openalex",
+    "type": "record",
+    "fields": [
+        {"name": "associated_institutions", "type": ["null", {"type": "array", "items": 
+            {
+                "type": "record",
+                "name": "Dehydrated_institution",
+                "fields": [
+                    {"name": "id", "type": ["null", "string"]},
+                    {"name": "ror", "type": ["null", "string"]},
+                    {"name": "display_name", "type": ["null", "string"]},
+                    {"name": "country_code", "type": ["null", "string"]},
+                    {"name": "type", "type": ["null", "string"]},
+                    {"name": "relationship", "type": ["null", "string"]}
+
+                ]
+            }
+        }]},
+        {"name": "cited_by_count", "type": ["null", "int"]},
+        {"name": "country_code", "type": ["null", "string"]},
+        {"name": "counts_by_year", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "YearCount",
+            "fields": [
+                {"name": "year", "type": ["null","int"]},
+                {"name": "works_count", "type": ["null","int"]},
+                {"name": "cited_by_count", "type": ["null","int"]}
+            ]}
+        }]},
+        {"name": "created_date", "type": ["null", "string"]},
+        {"name": "display_name", "type": ["null", "string"]},
+        {"name": "display_name_acronyms", 
+            "type": ["null", {"type": "array", "items": "string"}]
+        },
+        {"name": "display_name_alternatives", 
+            "type": ["null", {"type": "array", "items": "string"}]
+        },
+        {"name": "geo", "type": ["null", {
+            "type": "record",
+            "name": "Geo",
+            "fields":[
+                {"name": "city", "type": ["null", "string"]},
+                {"name": "geonames_city_id", "type": ["null", "string"]},
+                {"name": "region", "type": ["null", "string"]},
+                {"name": "country_code", "type": ["null", "string"]},
+                {"name": "country", "type": ["null", "string"]},
+                {"name": "latitude", "type": ["null", "double"]},
+                {"name": "longitude", "type": ["null", "double"]}
+            ]
+        }]},
+        {"name": "homepage_url", "type": ["null", "string"]},
+        {"name": "id", "type": ["null", "string"]},
+        {"name": "ids", "type": ["null",
+            {
+                "type": "record",
+                "name": "Id",
+                "fields": [
+                    {"name": "grid", "type": ["null", "string"]},
+                    {"name": "mag", "type": ["null", "long"]},
+                    {"name": "openalex", "type": ["null", "string"]},
+                    {"name": "ror", "type": ["null", "string"]},
+                    {"name": "wikipedia", "type": ["null", "string"]},
+                    {"name": "wikidata", "type": ["null", "string"]}
+                ]
+            }
+        ]},
+        {"name": "image_thumbnail_url", "type": ["null", "string"]},
+        {"name": "image_url", "type": ["null", "string"]},
+        {"name": "lineage", "type": ["null",
+            {"type": "array", "items": "string"}
+        ]},
+        {"name": "repositories", "type": ["null",
+            {"type": "array", "items": 
+                {
+                    "type": "record",
+                    "name": "Repository",
+                    "fields": [
+                        {"name": "id", "type": ["null", "string"]},
+                        {"name": "display_name", "type": ["null", "string"]},
+                        {"name": "host_organization", "type": ["null", "string"]},
+                        {"name": "host_organization_name", "type": ["null", "string"]},
+                        {"name": "host_organization_lineage", "type":["null", 
+                            {"type": "array", "items": "string"}
+                        ]}
+                    ]
+                }
+            }
+        ]},
+        {"name": "roles", "type": ["null", 
+            {"type": "array", "items": 
+                {
+                    "type": "record",
+                    "name": "Role",
+                    "fields": [
+                        {"name": "role", "type": ["null", "string"]},
+                        {"name": "id", "type": ["null", "string"]},
+                        {"name": "works_count", "type": ["null", "int"]}
+                    ]
+                }
+            }
+        ]},
+        {"name": "ror", "type": ["null", "string"]},
+        {"name": "summary_stats", "type": ["null", 
+            {
+                "type": "record",
+                "name": "Stats",
+                "fields": [
+                    {"name": "secondyr_mean_citedness", "type": ["null", "double"]},
+                    {"name": "h_index", "type": ["null", "int"]},
+                    {"name": "i10_index", "type": ["null", "int"]}
+                ]
+            }
+        ]},
+        {"name": "type", "type": ["null", "string"]},
+        {"name": "updated_date", "type": ["null", "string"]},
+        {"name": "works_api_url", "type": ["null", "string"]},
+        {"name": "works_count", "type": ["null", "int"]},
+        {"name": "x_concepts", "type": ["null", {"type": "array", "items":
+            {"type": "record",
+            "name": "X_concept",
+            "fields": [
+                {"name": "id", "type": ["null","string"]},
+                {"name": "wikidata", "type": ["null","string"]},
+                {"name": "display_name", "type": ["null","string"]},
+                {"name": "level", "type": ["null","int"]},
+                {"name": "score", "type": ["null","double"]}
+            ]}
+        }]}
+    ]
+}
