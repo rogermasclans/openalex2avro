@@ -1,6 +1,6 @@
 # openalex2avro
 
-Welcome to the `openalex2avro` repository! This library transforms OpenAlex snapshots into Avro files, which can then be imported into data warehouses like Google BigQuery, Amazon Redshift, Snowflake, and Microsoft Azure.
+This library transforms OpenAlex snapshots into Avro files, which can then be imported into data warehouses like Google BigQuery, Amazon Redshift, Snowflake, and Microsoft Azure.
 
 [OpenAlex](https://docs.openalex.org/) is a comprehensive and open dataset of scholarly works, authors, institutions, and other entities involved in scientific research. It provides detailed metadata and relationships between these entities, making it a valuable resource for research and analysis in the academic and scientific communities.
 
